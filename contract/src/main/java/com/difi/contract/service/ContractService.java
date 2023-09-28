@@ -16,6 +16,7 @@ public class ContractService {
     /**
      * Thêm <span id="var" ></span> vào file html
      * Lấy từ request gán vào file html
+     * Return biểu mẫu chứa thông tin khách hàng
      */
     public ResponseEntity<byte[]> createHanMucThauChi(HanMucThauChiRequest request) throws Exception {
         // Đường dẫn tới file HTML trong thư mục resources
