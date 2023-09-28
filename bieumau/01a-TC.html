@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: "Times New Roman", Times, serif;
+        }
+        .checkbox-name{
+            width: 15px;
+            border: solid 1px;
+            text-align: center;
+        }
+        .logo{
+            height: 260px;
+            width: 300px;
+        }
+        .account-type{
+            font-weight: bold;
+        }
+        .header{
+            display: flex;
+            justify-content: space-between;
+        }
+        .formId{
+            margin-top: 70px;
+            display: flex;
+            justify-content: flex-end;
+            font-style: italic;
+            text-decoration: underline;
+        }
+        .wrapper{
+            margin: 0 80px;
+            margin-top: 64px;
+        }
+        .title{
+            font-weight: bold;
+            margin-top: 40px;
+            display: flex;
+            justify-content: center;
+        }
+        .outerline-wrapper{
+            display: flex;
+            gap: 8px;
+            margin-left: 128px;
+            margin-top: 32px;
+        }
+        .outerline{
+            font-weight: bold;
+        }
+        .for-customer{
+            font-weight: bold;
+            margin-top: 16px;
+        }
+        .box-name{
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <div class="wrapper">
+        <div class="header">
+            <div>
+                <img class="logo"
+                     src="https://static.wixstatic.com/media/9d8ed5_aaa714eb7e394d9cb7a22221ed42d590~mv2.png/v1/fill/w_500,h_500,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/9d8ed5_aaa714eb7e394d9cb7a22221ed42d590~mv2.png"
+                     alt="">
+            </div>
+            <div class="formId">
+                <p>Mẫu 01a/TC - QTDND</p>
+            </div>
+        </div>
+
+        <h2 class="title">GIẤY ĐỀ NGHỊ PHÁT HÀNH THẺ GHI NỢ
+           VÀ CHO VAY THEO HẠN MỨC THẤU CHI
+        </h2>
+        <div class="outerline-wrapper">
+            <p class="outerline">Kính gửi:</p>
+            <p>Ngân hàng Hợp tác ...................................................................................
+            </p>
+        </div>
+        <h2 class="for-customer">PHẦN DÀNH CHO KHÁCH HÀNG</h2>
+        <p>Họ và tên: ....................................................................................................................................................................
+        </p>
+        <div class="box-name">Tên trên thẻ (in hoa không dấu, tối đa 25 ký tự):
+            <input type="text" name="customer-name" class="checkbox-name">
+            <input type="text" name="customer-name" class="checkbox-name">
+            <input type="text" name="customer-name" class="checkbox-name">
+            <input type="text" name="customer-name" class="checkbox-name">
+            <input type="text" name="customer-name" class="checkbox-name">
+            <input type="text" name="customer-name" class="checkbox-name">
+            <input type="text" name="customer-name" class="checkbox-name">
+            <input type="text" name="customer-name" class="checkbox-name">
+            <input type="text" name="customer-name" class="checkbox-name">
+            <input type="text" name="customer-name" class="checkbox-name">
+            <input type="text" name="customer-name" class="checkbox-name">
+            <input type="text" name="customer-name" class="checkbox-name">
+            <input type="text" name="customer-name" class="checkbox-name">
+            <input type="text" name="customer-name" class="checkbox-name">
+            <input type="text" name="customer-name" class="checkbox-name">
+            <input type="text" name="customer-name" class="checkbox-name">
+            <input type="text" name="customer-name" class="checkbox-name">
+            <input type="text" name="customer-name" class="checkbox-name">
+            <input type="text" name="customer-name" class="checkbox-name">
+            <input type="text" name="customer-name" class="checkbox-name">
+            <input type="text" name="customer-name" class="checkbox-name">
+            <input type="text" name="customer-name" class="checkbox-name">
+            <input type="text" name="customer-name" class="checkbox-name">
+            <input type="text" name="customer-name" class="checkbox-name">
+            <input type="text" name="customer-name" class="checkbox-name">
+        </div>
+        <div>
+            <span>Giới tính:</span>
+            <input type="checkbox" id="customer-male" name="customer-sex">
+            <label for="customer-male">Nam</label>
+            <input type="checkbox" id="customer-female" name="customer-sex">
+            <label for="customer-female">Nữ</label>
+            Ngày sinh: ...../......../..........
+            Quốc tịch: …..............................</div>
+        <p>Số CMND/Hộ chiếu/Căn cước: ........................................
+            Ngày cấp: ..../..../............
+            Nơi cấp: ..............................</p>
+        <p>Địa chỉ thường trú:
+            ....................................................................................................................................................</p>
+        <p>Điện thoại liên hệ: ......................................
+            ĐTDĐ: ……………………..
+            Email: .....................................................</p>
+        <p>Nghề nghiệp:
+            .............................................................................................................................................................</p>
+        <p>Địa chỉ cơ quan:
+            .........................................................................................................................................................</p>
+        <p>Đăng ký dịch vụ SMS Banking
+            <input type="checkbox" id="SMS" name="account">
+            <label for="account"></label>
+             Số ĐTDĐ:...................................................................................................</p>
+        <p>Số tài khoản thanh toán:............................................................</p>
+        <p>Đề nghị Ngân hàng Hợp tác phát hành thẻ:</p>
+        <div class="account-type">
+            <input type="checkbox" id="account" name="account">
+            <label for="account">Tài khoản thanh toán</label>
+
+            <input type="checkbox" id="saving-account" name="account">
+            <label for="saving-account">Tiền gửi có kỳ hạn</label>
+
+            <input type="checkbox" id="another-type" name="account">
+            <label for="another-type">Khác:..........</label>
+        </div>
+        <p>Hạn mức thấu chi đề nghị bằng số:.......................VNĐ</p>
+        <p>(Bằng chữ ..................................................................................................................................................................)</p>
+        <p>Thời hạn hiệu lực: tháng</p>
+        <p>Mục đích sử dụng hạn mức:………………………………………………………………………………………....</p>
+        <p class="outerline">Tôi cam kết:</p>
+        <ul>
+            <li>- Những thông tin trên là đúng sự thật và hoàn toàn chịu trách nhiệm về các thông tin cung cấp, các dịch vụ đã đăng ký sử dụng.</li>
+            <li>- Tôi xác nhận và đồng ý với các điều khoản đã được NHHT thông báo về Biểu phí phát hành và sử dụng thẻ ghi nợ.</li>
+            <li>- Tôi đồng ý nhận thông tin quảng cáo về tất cả các sản phẩm, dịch vụ, chương trình hoạt động của NHHT bằng thư điện tử, tin nhắn hoặc qua các kênh khác.</li>
+            <li>- Chấp hành đúng mọi quy định trong chế độ tín dụng và lãi suất cho vay hiện hành của Ngân hàng Hợp tác.</li>
+            <li>- Cam kết dùng các nguồn thu nhập hợp pháp để trả nợ Ngân hàng Hợp tác.</li>
+            <li>- Trường hợp không thực hiện đúng theo các điều khoản ký kết trong Hợp đồng sử dụng thẻ ghi nợ và cho vay theo HMTC tôi cam kết thực hiện biện pháp bảo đảm bằng tài sản theo yêu cầu của Ngân hàng Hợp tác.</li>
+            <li>- Sử dụng thẻ ghi nợ theo các điều kiện, điều khoản quy định trong Hợp đồng sử dụng thẻ ghi nợ và cho vay theo HMTC của Ngân hàng Hợp tác.</li>
+            <li>- Nếu không thực hiện đúng những lời cam kết trên, tôi xin chịu hoàn toàn trách nhiệm trước pháp luật.</li>
+        </ul>
+        <div class="flex justify-end mb-40">
+            <div >
+                <p>.............., ngày.......tháng......năm …....</p>
+                <h2 class="flex justify-center font-extrabold">KHÁCH HÀNG</h2>
+                <p class="flex justify-center">(Ký, ghi rõ họ tên)</p>
+            </div>
+        </div>
+        <h2 class="font-extrabold mt-4">XÁC NHẬN CỦA QUỸ TÍN DỤNG NHÂN DÂN  </h2>
+        <h2 class="outerline"> Phần dành cho khách hàng là cán bộ, nhân viên QTDND</h2>
+        <p> Ông (Bà):...................................................................................................... hiện đang công tác tại cơ quan chúng tôi.<br>
+            1- Chức vụ:………………………..Thời hạn hiệu lực còn lại của hợp đồng lao động (Người vay vốn có hợp đồng lao động có xác định thời hạn):.......................................................................................................................................<br>
+        <p  class="whitespace-break-spaces">2- Tổng thu nhập hàng tháng (bao gồm lương và các khoản thu nhập khác) là:...............................................................</p>
+        3- Trường hợp người vay vốn không trả được nợ theo đúng cam kết cơ quan chúng tôi có trách nhiệm giữ lại lương và các khoản thu nhập nói trên để Ngân hàng Hợp tác Chi nhánh………………..thu nợ vay (gốc và lãi) trực tiếp tại cơ quan. Nếu người vay vốn nghỉ việc hoặc thuyên chuyển công tác cơ quan sẽ thông báo cho Ngân hàng Hợp tác Chi nhánh …………. …và đôn đốc người vay trả hết nợ trước khi làm các thủ tục theo chế độ.
+        <h2 class="outerline"> Phần dành cho khách hàng là thành viên QTDND </h2>
+        <p>Ông (Bà):…………………………………… hiện đang là thành viên và:<br>
+            -  Có dư nợ vay vốn tại QTDND……………….. Trong quá trình vay vốn, Ông (Bà)…………………….……… luôn trả nợ gốc và lãi đầy đủ đúng hạn (Có lịch sử trả nợ đính kèm).<br>
+            -  Hoặc đang gửi vốn tại QTDND ………………..</p>
+
+        <div class="flex justify-end pb-80 mt-4">
+            <div >
+                <p>.............., ngày.......tháng......năm …....</p>
+                <h2 class="flex justify-center font-extrabold"> GIÁM ĐỐC QTDND.................</h2>
+                <p class="flex justify-center">(Ký, đóng dấu)</p>
+            </div>
+        </div>
+        <p class="pt-6 border-t-2">Ghi chú: Để thuận tiện cho khách hàng trong quá trình kiểm soát các giao dịch phát sinh, góp phần đảm bảo an toàn
+            tài sản trong quá trình sử dụng thẻ, NHHT kính đề nghị Quý khách đăng ký sử dụng dịch vụ SMS Banking, Email.</p>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Document</title>
+    <style>
+        * {
+            font-family: "SVN-Times New Roman", serif;
+        }
+
+        html,
+        body,
+        div,
+        span,
+        applet,
+        object,
+        iframe,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
+        p,
+        blockquote,
+        pre,
+        a,
+        abbr,
+        acronym,
+        address,
+        big,
+        cite,
+        code,
+        del,
+        dfn,
+        em,
+        img,
+        ins,
+        kbd,
+        q,
+        s,
+        samp,
+        small,
+        strike,
+        strong,
+        sub,
+        sup,
+        tt,
+        var,
+        b,
+        u,
+        i,
+        center,
+        dl,
+        dt,
+        dd,
+        ol,
+        ul,
+        li,
+        fieldset,
+        form,
+        label,
+        legend,
+        table,
+        caption,
+        tbody,
+        tfoot,
+        thead,
+        tr,
+        th,
+        td,
+        article,
+        aside,
+        canvas,
+        details,
+        embed,
+        figure,
+        figcaption,
+        footer,
+        header,
+        hgroup,
+        menu,
+        nav,
+        output,
+        ruby,
+        section,
+        summary,
+        time,
+        mark,
+        audio,
+        video {
+            margin: 0;
+            padding: 0;
+            border: 0;
+            font: inherit;
+            vertical-align: baseline;
+        }
+
+        /* HTML5 display-role reset for older browsers */
+        article,
+        aside,
+        details,
+        figcaption,
+        figure,
+        footer,
+        header,
+        hgroup,
+        menu,
+        nav,
+        section {
+            display: block;
+        }
+
+        ol,
+        ul {
+            list-style: none;
+        }
+
+        blockquote,
+        q {
+            quotes: none;
+        }
+
+        blockquote:before,
+        blockquote:after,
+        q:before,
+        q:after {
+            content: none;
+        }
+
+        table {
+            border-collapse: collapse;
+            border-spacing: 0;
+        }
+
+        .logo img {
+            height: 120px;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .header h1 {
+            font-weight: bold;
+            /* max-width: 340px; */
+            line-height: 28px;
+            margin: 0 auto 8px;
+        }
+
+        .header p span {
+            font-weight: bold;
+        }
+
+        .title {
+            font-weight: bold;
+            margin-bottom: 6px;
+        }
+
+        .information p {
+            /*margin-bottom: 2px;*/
+        }
+
+        .card-name span {
+            /*line-height: 1;*/
+            font-size: 10px;
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            text-align: center;
+            border: 1px solid black;
+        }
+
+        .table {
+            display: table;
+            width: 100%;
+            /*margin-bottom: 2px;*/
+        }
+
+        .table .cell {
+            display: table-cell;
+            width: 33%;
+        }
+
+        .gender span {
+            margin-right: 12px;
+        }
+
+        .card .cell {
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .commit h3 {
+            font-weight: bold;
+            text-indent: 20px;
+            /*margin-bottom: 2px;*/
+        }
+
+        .commit ul li {
+            /*margin-bottom: 2px;*/
+        }
+
+        .commit li .dash {
+            margin-right: 28px;
+        }
+
+        .sign {
+            margin-top: 12px;
+            min-width: 200px;
+            float: right;
+            text-align: center;
+        }
+
+        .sign p {
+            /*margin-bottom: 2px;*/
+        }
+
+        .sign .label {
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        .logo img {
+            height: 40px;
+        }
+
+        .credit {
+            margin-top: 200px;
+        }
+
+        .bank {
+            margin-top: 200px;
+            margin-bottom: 200px;
+        }
+
+        .table .sign {
+            width: 50%;
+        }
+
+        .rules {
+            margin-top: 30px;
+            margin-bottom: 100px;
+        }
+
+        .rules h3 {
+            font-weight: bold;
+        }
+
+        .rules li .dash {
+            margin-right: 28px;
+
+        }
+
+        .customer p {
+            padding-top: 5px;
+            padding-bottom: 5px;
+
+        }
+    </style>
+</head>
+<body>
+<div class="wrapper">
+    <div class="logo">
+        <img th:src="@{classpath:static/logo.png}" alt=""/>
+    </div>
+</div>
+<main>
+    <div class="header">
+        <h1>
+            HỢP ĐỒNG
+        </h1>
+        <h1>
+            SỬ DỤNG THẺ GHI NỢ VÀ CHO VAY THEO HẠN MỨC THẤU CHI
+        </h1>
+    </div>
+    <section class="customer">
+        <p>Căn cứ</p>
+        <p>Bộ luật Dân sự hiện hành;</p>
+        <p>Luật các tổ chức tín dụng hiện hành; Các quy định hiện hành của Ngân hàng Nhà nước Việt Nam và NHHT về phát
+            hành, quản lý, sử dụng và thanh toán thẻ;</p>
+        <p>Nhu cầu và khả năng của hai Bên.</p>
+        <div class="information">
+            <p>Hôm nay ngày <span th:text="${date}"></span> tại Ngân hàng Hợp tác <span th:text="${branch}"></span></p>
+            <p>Chúng tôi gồm có:</p>
+            <p>Bên A: Ngân hàng Hợp tác <span th:text="${branch}"></span></p>
+            <p>Đại diện: Ông/Bà<span th:text="${name}"></span></p>
+            <p>Chức vụ:<span th:text="${job}"></span></p>
+            <p>Địa chỉ giao dịch:<span th:text="${transacAddress}"></span></p>
+            <div class="table">
+                <p class="cell">Điện thoại<span th:text="${phone}"></span></p>
+                <p class="cell">Fax<span th:text="${fax}"></span></p>
+            </div>
+            <div class="table">
+                <p class="cell">Giấy ủy quyền số:<span th:text="${authorityId}"></span></p>
+                <p class="cell">do Ông (Bà)<span th:text="${name}"></span></p>
+            </div>
+            <p>Bên B: </p>
+            <p> Ông /Bà<span th:text="${name}"></span></p>
+            <div class="table">
+                <p class="cell">Sinh ngày: <span th:text="${birth}"></span></p>
+                <p class="cell">Nơi sinh <span th:text="${origin}"></span></p>
+            </div>
+            <p>Địa chỉ liên hệ <span th:text="${address}"></span></p>
+            <p>Số CMND/Hộ chiếu/Căn cước <span th:text="${idCard}"></span></p>
+            <div class="table">
+                <p class="cell">Ngày cấp: <span th:text="${date}"></span></p>
+                <p class="cell">Nơi cấp <span th:text="${provider}"></span></p>
+            </div>
+            <p>Hai Bên thỏa thuận ký kết Hợp đồng sử dụng thẻ ghi nợ với các điều kiện, điều khoản như sau:</p>
+        </div>
+    </section>
+    <section class="rules">
+        <h3>Điều 1 Giải thích thuật ngữ</h3>
+        <p>Trong Hợp đồng này, các từ ngữ dưới đây được hiểu như sau:</p>
+        <ul>
+            <li>
+                <span class="dash">1.</span>Thẻ: Là sản phẩm thẻ ghi nợ do NHHT phát hành cho phép chủ thẻ sử dụng trong
+                phạm vi số dư tài khoản thanh toán và (hoặc) hạn mức thấu chi để thanh toán hàng hóa, dịch vụ; thực hiện
+                rút/ứng tiền mặt và các dịch vụ ngân hàng khác do NHHT và các ngân hàng khác cung ứng.
+            </li>
+            <li>
+                <span class="dash">2.</span>Chủ thẻ: Là cá nhân được NHHT cấp thẻ để sử dụng.
+            </li>
+            <li>
+                <span class="dash">3.</span>Đơn vị chấp nhận thẻ (ĐVCNT): Là tổ chức/đơn vị hoặc cá nhân cung ứng hàng
+                hóa, dịch vụ, chấp nhận thẻ làm phương tiện thanh toán.
+            </li>
+            <li>
+                <span class="dash">4.</span>Điểm ứng tiền mặt (ĐƯTM): Là máy rút tiền tự động, Tổ chức thanh toán thẻ
+                hoặc ĐVCNT tại đó chủ thẻ có thể sử dụng thẻ để rút/ứng tiền mặt hoặc sử dụng các dịch vụ ngân hàng
+                khác.
+
+            </li>
+            <li>
+                <span class="dash">5.</span>Tài khoản thanh toán: Là tài khoản do chủ thẻ mở tại NHHT để phát hành,
+                thanh toán và sử dụng thẻ.
+
+            </li>
+            <li>
+                <span class="dash">6.</span>Cho vay theo hạn mức Thấu chi: Là việc NHHT chấp thuận cho khách hàng sử
+                dụng vượt số tiền hiện có trên tài khoản thanh toán bằng VNĐ mở tại NHHT theo đề nghị của khách hàng
+                trong một khoảng thời gian nhất định.
+
+            </li>
+            <li>
+                <span class="dash">7.</span>Mã số xác định chủ thẻ (Personal Identification Number - mã PIN): Là mã số
+                mật của cá nhân được sử dụng trong giao dịch thẻ để chứng thực chủ thẻ. Mã số này do chủ thẻ chịu trách
+                nhiệm bảo mật. Trong các giao dịch thẻ có sử dụng mã PIN, mã PIN được coi là chữ ký của chủ thẻ.
+            </li>
+            <li>
+                <span class="dash">8.</span>Giao dịch thẻ: Là việc chủ thẻ sử dụng thẻ để rút/ứng tiền mặt; thanh toán
+                hàng hóa, dịch vụ; sử dụng các dịch vụ ngân hàng khác do tổ chức phát hành thẻ, Tổ chức thanh toán thẻ
+                cung ứng.
+
+            </li>
+            <li>
+                <span class="dash">9.</span>Hoá đơn giao dịch: Là chứng từ xác nhận giao dịch hoàn thành do chủ thẻ thực
+                hiện bằng thẻ.
+
+            </li>
+            <li>
+                <span class="dash">10.</span>Sự kiện bất khả kháng: Là sự kiện do nguyên nhân khách quan gây ra
+                vượt quá khả năng kiểm soát của các bên tham gia hợp đồng, bao gồm nhưng không giới hạn ở các sự kiện
+                như: Chiến tranh, nổi loạn, khủng bố, hỏa hoạn, l
+                lũ lụt, cháy nổ, thiên tai, bạo động,v.v...
+            </li>
+        </ul>
+        <h3>Điều 2 Nội dung hợp đồng</h3>
+        <ul>
+            <li>
+                <span class="dash">1.</span>Bên A cung cấp cho Bên B dịch vụ thẻ ghi nợ theo đề nghị của Bên B tại Giấy
+                đề nghị phát hành thẻ ghi nợ và cho vay theo hạn mức thấu chi hoặc Giấy đề nghị cho vay theo hạn mức
+                thấu chi ngày<span th:text="${date}"></span> tháng <span th:text="${date}"></span> năm <span
+                    th:text="${date}"></span>.
+
+            </li>
+            <li>
+                <span class="dash">2.</span>Các khoản phí, lãi liên quan đến việc sử dụng thẻ thực hiện theo biểu phí do
+                NHHT quy định trong từng thời kỳ và được thông báo trên trang thông tin điện tử (www.co-opbank.vn) hoặc
+                qua các kênh thông tin khác của NHHT.
+            </li>
+        </ul>
+        <h3>Điều 3 Cho vay theo hạn mức Thấu chi</h3>
+
+        <ul>
+            <li>
+                <span class="dash">1.</span>Bên A chấp thuận cho Bên B vay theo hạn mức thấu chi trên tài khoản thanh
+                toán là:<span th:text="${money}"></span>VNĐ.
+                <p>Bằng chữ:<span th:text="${money}"></span></p>
+            </li>
+            <li>
+                <span class="dash">2.</span>Lãi suất cho vay thấu chi:<span th:text="${rate}"></span>%/năm tại thời điểm
+                ký hợp đồng. Mức lãi suất này có thể thay đổi theo quy định của NHHT trong từng thời kỳ.
+            </li>
+            <li>
+                <span class="dash">3.</span>Lãi suất quá hạn: Hết thời hạn cho vay theo hạn mức thấu chi, nếu Bên B
+                không thanh toán hoặc thanh toán không đủ dư nợ thấu chi, Bên A sẽ áp dụng lãi suất quá hạn bằng 150%
+                lãi suất cho vay trong hạn.
+
+            </li>
+            <li>
+                <span class="dash">4.</span>Thời hạn cho vay theo hạn mức thấu chi:<span th:text="${months}"></span>tháng.
+            </li>
+            <li>
+                <span class="dash">5.</span>Hình thức bảo đảm tiền vay: Cho vay không có bảo đảm bằng tài sản.
+            </li>
+            <li>
+                <span class="dash">6.</span>Thu nợ cho vay thấu chi:
+            </li>
+            <li>
+                <span class="dash">a.</span>Lãi được tính vào cuối tháng theo dư nợ thực tế phát sinh và được thu từ tài
+                khoản thanh toán của khách hàng.
+            </li>
+            <li>
+                <span class="dash">b.</span>Khi tài khoản thanh toán của khách hàng phát sinh giao dịch ghi có thì nợ
+                thấu chi (nếu có) sẽ được giảm ngay tương ứng.
+            </li>
+            <li>
+                <span class="dash">c.</span>Cuối tháng, Ngân hàng thông báo số dư nợ thấu chi đến khách hàng qua
+                SMS/Email đối với khách hàng đang có dư nợ thấu chi
+            </li>
+        </ul>
+        <h3>Điều 4 Phát hành lại thẻ, chấm dứt sử dụng thẻ</h3>
+        <ul>
+            <li>
+                <span class="dash">1.</span>Phát hành lại thẻ:
+                <p>Trường hợp thẻ bị mất/bị đánh cắp hoặc bên B có nhu cầu phát hành thẻ mới thay thế thẻ cũ, thẻ hỏng,
+                    Bên B có quyền đề nghị Bên A phát hành lại thẻ.</p>
+            </li>
+            <li>
+                <span class="dash">2.</span>Tạm dừng hoặc chấm dứt sử dụng thẻ:
+                <p>Bên A có quyền tạm dừng hoặc chấm dứt sử dụng thẻ của Bên B trong các trường hợp sau:
+                </p>
+            </li>
+            <li>
+                <span class="dash">a.</span>Bên B có hành vi vi phạm pháp luật, ảnh hưởng trực tiếp đến việc sử dụng
+                thẻ, hoặc Bên B vi phạm các điều kiện, điều khoản của Hợp đồng.
+            </li>
+            <li>
+                <span class="dash">b.</span>Bên B có hành vi gian lận, giả mạo hoặc thẻ bị nghi ngờ có liên quan đến
+                gian lận, giả mạo.
+
+            </li>
+            <li>
+                <span class="dash">c.</span>Bên B có yêu cầu tạm dừng, chấm dứt sử dụng thẻ.
+            </li>
+        </ul>
+        <h3>Điều 5 Quyền và nghĩa vụ của Bên A</h3>
+        <ul>
+            <li>
+                <span class="dash">1.</span>Quyền của Bên A
+            </li>
+            <li>
+                <span class="dash">a.</span>Đề nghị Bên B cung cấp đầy đủ, chính xác các thông tin theo quy định.
+            </li>
+            <li>
+                <span class="dash">b.</span>Tự động trích tài khoản thanh toán của Bên B mở tại Bên A hoặc đề nghị cơ
+                quan quản lý lao động trích thu nhập/trợ cấp xã hội hàng tháng của Bên B để thu nợ thấu chi và các khoản
+                nợ khác liên quan đến sử dụng thẻ. Nếu không đủ, Bên A có quyền áp dụng các biện pháp khác theo quy định
+                của pháp luật để thu hồi nợ. Sau thời gian quy định nếu khách hàng không hoàn thành đầy đủ nghĩa vụ trả
+                nợ, Bên A thực hiện chuyển toàn bộ nợ gốc và lãi của khoản nợ thấu chi và các khoản nợ khác liên quan
+                đến sử dụng thẻ của Bên B sang tài khoản vay của bên B được bên A thực hiện mở tự động để thực hiện theo
+                dõi, phân loại nợ, trích lập dự phòng và sử dụng dự phòng rủi ro theo quy định hiện hành.
+            </li>
+            <li>
+                <span class="dash">c.</span>Cung cấp cho cơ quan có thẩm quyền thông tin về tài khoản, giao dịch và các
+                thông tin khác của Bên B phục vụ cho công tác điều tra theo quy định của pháp luật.
+
+            </li>
+            <li>
+                <span class="dash">d.</span>Tạm dừng hoặc chấm dứt sử dụng thẻ trong các trường hợp Bên B vi phạm pháp
+                luật, các điều kiện, điều khoản Hợp đồng; có hành vi gian lận, giả mạo thẻ.
+
+            </li>
+            <li>
+                <span class="dash">e.</span>Được miễn trách nhiệm trong các trường hợp: Hệ thống xử lý, mạng truyền
+                thông,v.v…bị trục trặc hoặc sự cố ngoài khả năng kiểm soát của Bên A; Thẻ bị lợi dụng do bị mất, bị đánh
+                cắp hoặc các trường hợp khác do lỗi của Bên B.
+
+            </li>
+            <li>
+                <span class="dash">f.</span>Thu hồi thẻ vào bất cứ lúc nào trong các trường hợp quy định tại Khoản 2,
+                Điều 4 của Hợp đồng này bằng cách thông báo về việc thu hồi này cho Bên B hoặc thông qua Tổ chức thanh
+                toán thẻ, ĐVCNT. Trong trường hợp này, Bên A được miễn trách nhiệm đối với bất kỳ sự phương hại nào tới
+                danh dự, uy tín của Bên B trong việc yêu cầu thu hồi lại thẻ.
+
+            </li>
+            <li>
+                <span class="dash">g.</span>Các quyền khác theo quy định của pháp luật.
+
+            </li>
+            <li>
+                <span class="dash">2.</span>Nghĩa vụ của Bên A
+            </li>
+            <li>
+                <span class="dash">a.</span>Tuân thủ các quy định về phát hành và thanh toán thẻ của Ngân hàng Nhà nước
+                và các tổ chức thẻ trong nước.
+
+
+            </li>
+            <li>
+                <span class="dash">b.</span>Tôn trọng quyền và lợi ích của Bên B theo Hợp đồng.
+
+
+            </li>
+            <li>
+                <span class="dash">c.</span>Giải quyết các yêu cầu tra soát, khiếu nại của Bên B liên quan đến việc sử
+                dụng thẻ.
+
+
+            </li>
+            <li>
+                <span class="dash">d.</span>Bảo mật các thông tin về tài khoản, giao dịch thẻ của Bên B, trừ trường hợp
+                hai Bên có thỏa thuận khác hoặc khi có yêu cầu của cơ quan có thẩm quyền.
+
+
+            </li>
+            <li>
+                <span class="dash">e.</span>Chịu trách nhiệm khóa thẻ và phối hợp với các bên liên quan để thực hiện các
+                biện pháp nghiệp vụ nhằm ngăn chặn các thiệt hại có thể xảy ra trong trường hợp bên B thông báo mất thẻ
+                hoặc lộ thông tin thẻ.
+
+
+            </li>
+            <li>
+                <span class="dash">f.</span>Các nghĩa vụ khác theo quy định của pháp luật.
+
+            </li>
+        </ul>
+        <h3>Điều 6 Quyền và nghĩa vụ của Bên B</h3>
+        <ul>
+            <li>
+                <span class="dash">1.</span>Quyền của Bên B
+            </li>
+            <li>
+                <span class="dash">a.</span>Trực tiếp nhận thẻ, mã PIN
+
+            </li>
+            <li>
+                <span class="dash">b.</span>Sử dụng thẻ để, thanh toán hàng hóa, dịch vụ trong phạm vi số dư tài khoản
+                thanh toán/hạn mức thấu chi được cấp.
+
+            </li>
+            <li>
+                <span class="dash">c.</span>Đề nghị Bên A cấp lại mã PIN, phát hành lại thẻ, tạm ngừng hoặc chấm dứt sử
+                dụng thẻ.
+            </li>
+            <li>
+                <span class="dash">d.</span>Được tham gia các chương trình ưu đãi dành riêng cho chủ thẻ theo quy định
+                của NHHT
+
+            </li>
+            <li>
+                <span class="dash">e.</span>Đơn phương chấm dứt Hợp đồng sử dụng thẻ sau khi đã thanh toán cho Bên A
+                toàn bộ các khoản nợ có liên quan.
+
+
+            </li>
+            <li>
+                <span class="dash">f.</span>Khiếu nại về các vấn đề có liên quan trong quá trình sử dụng thẻ tại bất kỳ
+                chi nhánh nào của NHHT. Thời hạn khiếu nại là 60 ngày kể từ ngày phát sinh giao dịch.
+
+
+            </li>
+            <li>
+                <span class="dash">g.</span>Các quyền khác theo quy định của pháp luật.
+            </li>
+
+            <li>
+                <span class="dash">2.</span>Nghĩa vụ của Bên B
+            </li>
+            <li>
+                <span class="dash">a.</span>Chấp hành đầy đủ các quy trình kỹ thuật, nghiệp vụ, tài liệu hướng dẫn liên
+                quan đến sử dụng thẻ theo quy định hiện hành của NHHT
+
+
+            </li>
+            <li>
+                <span class="dash">b.</span>Ký vào dải chữ ký ở mặt sau của thẻ theo đúng chữ ký mẫu đã đăng ký với ngân
+                hàng ngay khi nhận được thẻ.
+
+
+            </li>
+            <li>
+                <span class="dash">c.</span>Bảo quản thẻ, bảo mật mã PIN. Không được cho người khác mượn thẻ/mã PIN hoặc
+                tiết lộ mã PIN cho người khác. Trường hợp để mất thẻ hoặc để lộ mã PIN, Bên B phải hoàn toàn chịu trách
+                nhiệm về mọi rủi ro, tổn thất phát sinh.
+
+            </li>
+            <li>
+                <span class="dash">d.</span>Ký hóa đơn thanh toán, đảm bảo khớp đúng với chữ ký ở mặt sau của thẻ khi sử
+                dụng thẻ để thanh toán hàng hóa, dịch vụ
+
+
+            </li>
+            <li>
+                <span class="dash">e.</span>Hoàn toàn chịu trách nhiệm đối với các giao dịch thẻ có chữ ký và (hoặc) sử
+                dụng mã PIN, các giao dịch khác trong trường hợp không cần chữ ký của chủ thẻ nhưng Ngân hàng cung cấp
+                được bằng chứng về giao dịch đã được thực hiện.
+
+
+            </li>
+            <li>
+                <span class="dash">f.</span>Thông báo cho Bên A, chi nhánh NHHT hoặc Trung tâm Thẻ và dịch vụ Ngân hàng
+                số và dịch vụ ngân hàng số NHHT qua số điện thoại hỗ trợ khách hàng trên mặt sau của thẻ khi phát hiện
+                thẻ bị mất/bị đánh cắp/bị lộ mã PIN hoặc có nghi ngờ thẻ đang bị lợi dụng. Các thông tin cần cung cấp
+                trong trường hợp này bao gồm: Họ tên, số CMND/Hộ chiếu, số thẻ, loại thẻ, ngày hiệu lực của thẻ, địa
+                điểm thẻ bị mất/bị đánh cắp, thời gian mất, chi nhánh phát hành thẻ. Sau đó phải đến điểm giao dịch của
+                Bên A để hoàn tất thủ tục.
+            </li>
+            <li>
+                <span class="dash">g.</span>Thông báo kịp thời cho Bên A khi có những thay đổi của chủ thẻ về các thông
+                tin như: Địa chỉ liên lạc/nơi cư trú/nơi làm việc, v.v... trường hợp không thông báo, nếu có phát sinh
+                rủi ro, tổn thất thì chủ thẻ phải hoàn toàn chịu trách nhiệm.
+            </li>
+            <li>
+                <span class="dash">h.</span>Sử dụng chữ ký theo đúng chữ ký mẫu đã đăng ký tại NHHT.
+
+            </li>
+            <li>
+                <span class="dash">i.</span>Chịu trách nhiệm đối với mọi rủi ro, tổn thất phát sinh trước và trong phạm
+                vi 120 phút kể từ thời điểm hoàn thành thủ tục báo mất thẻ tại trụ sở Bên A trong trường hợp thẻ bị
+                mất/bị đánh cắp.
+            </li>
+            <li>
+                <span class="dash">j.</span>Thanh toán đầy đủ, đúng hạn các khoản phí, lãi, dư nợ và các khoản khác phát
+                sinh liên quan đến sử dụng thẻ theo quy định của NHHT
+
+            </li>
+            <li>
+                <span class="dash">k.</span>Chịu trách nhiệm giải quyết tranh chấp với ĐVCNT về các vấn đề liên quan đến
+                hàng hóa, dịch vụ.
+
+            </li>
+            <li>
+                <span class="dash">l.</span>Các nghĩa vụ khác theo quy định của pháp luật.
+
+            </li>
+
+        </ul>
+        <h3>Điều 7 Sửa đổi, bổ sung Hợp đồng</h3>
+        <p>Trong Hợp đồng này, các từ ngữ dưới đây được hiểu như sau:</p>
+        <ul>
+            <li>
+                <span class="dash">1.</span>Trường hợp có nhu cầu sửa đổi, bổ sung các điều kiện, điều khoản của Hợp
+                đồng, Bên A sẽ thông báo cho Bên B bằng văn bản hoặc trên các phương tiện thông tin đại chúng hoặc trên
+                trang thông tin điện tử (Website) của NHHT về việc sửa đổi, bổ sung Hợp đồng. Bên B có một khoảng thời
+                gian nhất định (theo thông báo của Bên A) để cân nhắc việc tiếp tục sử dụng thẻ theo nội dung sửa đổi
+                được Bên A thông báo.
+
+            </li>
+            <li>
+                <span class="dash">2.</span>Trường hợp không có ý kiến phản hồi gửi Bên A trong thời hạn nêu trên, Bên B
+                được coi là chấp thuận toàn bộ nội dung sửa đổi, bổ sung Hợp đồng theo thông báo của Bên A.
+
+            </li>
+        </ul>
+        <h3>Điều 8 Chấm dứt Hợp đồng</h3>
+        <ul>
+            <li>
+                <span class="dash">1.</span>Đơn phương chấm dứt Hợp đồng
+            </li>
+            <li>
+                <span class="dash">a.</span>Hai Bên có quyền đơn phương chấm dứt Hợp đồng trước thời hạn sau khi thông
+                báo cho Bên kia bằng văn bản trước 30 ngày làm việc.
+            </li>
+            <li>
+                <span class="dash">b.</span>Trong trường hợp Bên B vi phạm các điều kiện, điều khoản của Hợp đồng hoặc
+                có hành vi liên quan đến gian lận, giả mạo thẻ, Bên A có quyền đơn phương chấm dứt Hợp đồng mà không cần
+                thông báo trước cho Bên B.
+            </li>
+            <li>
+                <span class="dash">2.</span>Các trường hợp chấm dứt Hợp đồng
+            </li>
+            <li>
+                <span class="dash">a.</span>Các bên đơn phương chấm dứt Hợp đồng.
+
+            </li>
+            <li>
+                <span class="dash">b.</span>Chấm dứt Hợp đồng theo thỏa thuận của hai Bên.
+            </li>
+            <li>
+                <span class="dash">c.</span>Các trường hợp chấm dứt sử dụng thẻ.
+            </li>
+            <li>
+                <span class="dash">d.</span>Các trường hợp khác theo quy định của pháp luật.
+
+            </li>
+            <li>
+                <span class="dash">3.</span>Trong mọi trường hợp chấm dứt Hợp đồng, Bên B vẫn có nghĩa vụ thanh toán đầy
+                đủ các khoản phí, lãi, dư nợ và các khoản khác phát sinh liên quan đến sử dụng thẻ theo quy định của
+                NHHT.
+
+            </li>
+
+        </ul>
+        <h3>Điều 9 Luật điều chỉnh, giải quyết tranh chấp</h3>
+        <ul>
+            <li>
+                <span class="dash"></span>Hợp đồng này được thiết lập và điều chỉnh bởi pháp luật Việt Nam.
+                Hai bên xác nhận đã đọc, hiểu rõ và hoàn toàn nhất trí với nội dung Hợp đồng, đồng thời cam kết nghiêm
+                chỉnh thực hiện các điều kiện, điều khoản đã ký kết. Trường hợp phát sinh tranh chấp trong quá trình
+                thực hiện, hai Bên sẽ bàn bạc, giải quyết trên cơ sở thương lượng, đôi Bên cùng có lợi. Nếu không tự
+                giải quyết được, một trong hai Bên có quyền chuyển tranh chấp ra Tòa án có thẩm quyền nơi Bên A có trụ
+                sở để giải quyết. Quyết định của Tòa án có hiệu lực cuối cùng và bắt buộc thi hành đối với các Bên. Án
+                phí do Bên thua kiện chịu.
+
+            </li>
+
+        </ul>
+        <h3>Điều 10 Điều khoản thanh lý Hợp đồng</h3>
+        <ul>
+            <li>
+                <span class="dash"></span>Hợp đồng này mặc nhiên được thanh lý sau khi các Bên hoàn thành đầy đủ các
+                nghĩa vụ theo Hợp đồng, đồng thời toàn bộ khiếu nại, tranh chấp phát sinh đã được giải quyết dứt điểm.
+
+            </li>
+
+        </ul>
+        <h3>Điều 11 Điều khoản thi hành</h3>
+        <ul>
+            <li>
+                <span class="dash">1.</span>Hợp đồng này có hiệu lực thi hành kể từ ngày ký cho đến khi được thanh lý
+                theo quy định tại Điều 10 của Hợp đồng này.
+
+            </li>
+            <li>
+                <span class="dash">2.</span>Hợp đồng này được lập thành 02 (hai) bản có giá trị pháp lý như nhau, mỗi
+                Bên giữ 01 (một) bản.
+            </li>
+        </ul>
+        <div class="table">
+            <div class="sign">
+                <p class="label">ĐẠI DIỆN BÊN A</p>
+                <p>(Ký, ghi rõ họ tên)</p>
+            </div>
+            <div class="sign">
+                <p class="label">ĐẠI DIỆN BÊN B
+                </p>
+                <p>(Ký, ghi rõ họ tên)</p>
+            </div>
+        </div>
+    </section>
+</main>
+</body>
+</html>

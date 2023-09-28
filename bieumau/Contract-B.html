@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Document</title>
+    <style>
+        * {
+            font-family: "SVN-Times New Roman", serif;
+        }
+
+        html,
+        body,
+        div,
+        span,
+        applet,
+        object,
+        iframe,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
+        p,
+        blockquote,
+        pre,
+        a,
+        abbr,
+        acronym,
+        address,
+        big,
+        cite,
+        code,
+        del,
+        dfn,
+        em,
+        img,
+        ins,
+        kbd,
+        q,
+        s,
+        samp,
+        small,
+        strike,
+        strong,
+        sub,
+        sup,
+        tt,
+        var,
+        b,
+        u,
+        i,
+        center,
+        dl,
+        dt,
+        dd,
+        ol,
+        ul,
+        li,
+        fieldset,
+        form,
+        label,
+        legend,
+        table,
+        caption,
+        tbody,
+        tfoot,
+        thead,
+        tr,
+        th,
+        td,
+        article,
+        aside,
+        canvas,
+        details,
+        embed,
+        figure,
+        figcaption,
+        footer,
+        header,
+        hgroup,
+        menu,
+        nav,
+        output,
+        ruby,
+        section,
+        summary,
+        time,
+        mark,
+        audio,
+        video {
+            margin: 0;
+            padding: 0;
+            border: 0;
+            font: inherit;
+            vertical-align: baseline;
+        }
+
+        /* HTML5 display-role reset for older browsers */
+        article,
+        aside,
+        details,
+        figcaption,
+        figure,
+        footer,
+        header,
+        hgroup,
+        menu,
+        nav,
+        section {
+            display: block;
+        }
+
+        ol,
+        ul {
+            list-style: none;
+        }
+
+        blockquote,
+        q {
+            quotes: none;
+        }
+
+        blockquote:before,
+        blockquote:after,
+        q:before,
+        q:after {
+            content: none;
+        }
+
+        table {
+            border-collapse: collapse;
+            border-spacing: 0;
+        }
+
+        .logo img {
+            height: 120px;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .header h1 {
+            font-weight: bold;
+            /* max-width: 340px; */
+            line-height: 28px;
+            margin: 0 auto 8px;
+        }
+
+        .header p span {
+            font-weight: bold;
+        }
+
+        .title {
+            font-weight: bold;
+            margin-bottom: 6px;
+        }
+
+        .information p {
+            /*margin-bottom: 2px;*/
+        }
+
+        .card-name span {
+            /*line-height: 1;*/
+            font-size: 10px;
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            text-align: center;
+            border: 1px solid black;
+        }
+
+        .table {
+            display: table;
+            width: 100%;
+            /*margin-bottom: 2px;*/
+        }
+
+        .table .cell {
+            display: table-cell;
+            width: 33%;
+        }
+
+        .gender span {
+            margin-right: 12px;
+        }
+
+        .card .cell {
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .commit h3 {
+            font-weight: bold;
+            text-indent: 20px;
+            /*margin-bottom: 2px;*/
+        }
+
+        .commit ul li {
+            /*margin-bottom: 2px;*/
+        }
+
+        .commit li .dash {
+            margin-right: 28px;
+        }
+
+        .sign {
+            margin-top: 12px;
+            min-width: 200px;
+            float: right;
+            text-align: center;
+        }
+
+        .sign p {
+            /*margin-bottom: 2px;*/
+        }
+
+        .sign .label {
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        .logo img {
+            height: 40px;
+        }
+
+        .credit {
+            margin-top: 200px;
+        }
+
+        .bank {
+            margin-top: 200px;
+            margin-bottom: 200px;
+        }
+
+        .table .sign {
+            width: 50%;
+        }
+
+        .rules {
+            margin-top: 30px;
+            margin-bottom: 100px;
+        }
+
+        .rules h3 {
+            font-weight: bold;
+        }
+
+        .rules li .dash {
+            margin-right: 28px;
+
+        }
+
+        .customer p {
+            padding-top: 5px;
+            padding-bottom: 5px;
+
+        }
+    </style>
+</head>
+<body>
+<div class="wrapper">
+    <div class="logo">
+        <img th:src="@{classpath:static/logo.png}" alt=""/>
+    </div>
+</div>
+<main>
+    <div class="header">
+        <h1>
+            HỢP ĐỒNG
+        </h1>
+        <h1>
+            SỬ DỤNG THẺ GHI NỢ VÀ CHO VAY THEO HẠN MỨC THẤU CHI
+        </h1>
+    </div>
+    <section class="customer">
+        <p>Căn cứ</p>
+        <p>Bộ luật Dân sự hiện hành;</p>
+        <p>Luật các tổ chức tín dụng hiện hành; Các quy định hiện hành của Ngân hàng Nhà nước Việt Nam và NHHT về phát
+            hành, quản lý, sử dụng và thanh toán thẻ;</p>
+        <p>Nhu cầu và khả năng của hai Bên.</p>
+        <div class="information">
+            <p>Hôm nay ngày <span th:text="${date}"></span> tại Ngân hàng Hợp tác <span th:text="${branch}"></span></p>
+            <p>Chúng tôi gồm có:</p>
+            <p>Bên A: Ngân hàng Hợp tác <span th:text="${branch}"></span></p>
+            <p>Đại diện: Ông/Bà<span th:text="${name}"></span></p>
+            <p>Chức vụ:<span th:text="${job}"></span></p>
+            <div class="table">
+                <p class="cell">Giấy ủy quyền số:<span th:text="${authorityId}"></span></p>
+                <p class="cell">do Ông (Bà)<span th:text="${name}"></span></p>
+            </div>
+            <p>Kí ngày<span th:text="${date}"></span></p>
+            <p>Địa chỉ giao dịch:<span th:text="${transacAddress}"></span></p>
+            <div class="table">
+                <p class="cell">Điện thoại<span th:text="${phone}"></span></p>
+                <p class="cell">Fax<span th:text="${fax}"></span></p>
+            </div>
+            <p>Bên B: </p>
+            <p> Ông /Bà<span th:text="${name}"></span></p>
+            <div class="table">
+                <p class="cell">Sinh ngày: <span th:text="${birth}"></span></p>
+                <p class="cell">Nơi sinh <span th:text="${origin}"></span></p>
+            </div>
+            <p>Địa chỉ liên hệ <span th:text="${address}"></span></p>
+            <p>Hiện đang công tác tại: <span th:text="${workAddress}"></span></p>
+            <p>Điện thoại <span th:text="${phone}"></span></p>
+            <div class="table">
+                <p class="cell">Số CMND/Hộ chiếu/Căn cước <span th:text="${idCard}"></span></p>
+                <p class="cell">Ngày cấp: <span th:text="${date}"></span></p>
+                <p class="cell">Nơi cấp <span th:text="${provider}"></span></p>
+            </div>
+            <p>Số tài khoản thanh toán : <span th:text="${cif}"></span></p>
+            <p>Sau khi thảo luận, hai bên thỏa thuận ký Phụ lục Hợp đồng sử dụng thẻ ghi nợ và cho vay theo hạn mức thấu
+                chi theo các điều khoản sau:</p>
+        </div>
+    </section>
+    <section class="rules">
+        <h3>Điều 1</h3>
+        <p>Sửa đổi, bổ sung Khoản 1 Điều 3 của Hợp đồng sử dụng thẻ ghi nợ và cho vay theo hạn mức thấu chi ký ngày
+            <span th:text="${date}"></span> giữa Ngân hàng Hợp tác <span th:text="${branch}"></span> và Ông/Bà<span
+                    th:text="${name}"></span> như sau :
+        </p>
+        <p>“ 1. Bên A chấp thuận cho Bên B vay theo hạn mức thấu chi trên tài khoản thanh toán là <span th:text="${money}"></span> VNĐ (Bằng
+            chữ :<span th:text="${money}"></span>)”.
+        </p>
+        <h3>Điều 2. Điều khoản thi hành:</h3>
+        <p>2.1 Phụ lục này có hiệu lực kể từ ngày ký và là một phần không tách rời của Hợp đồng sử dụng thẻ và cho vay hạn mức thấu chi. Các nội dung khác tại Hợp đồng sử dụng thẻ và cho vay hạn mức thấu chi không sửa đổi, vẫn giữ nguyên hiệu lực thi hành.
+        </p>
+        <p>2.2 Phụ lục được lập thành 02 (hai) bản có giá trị pháp lý như nhau. Mỗi bên giữ 01 (một) bản.</p>
+        <div class="table">
+            <div class="sign">
+                <p class="label">ĐẠI DIỆN BÊN A</p>
+                <p>(Ký, ghi rõ họ tên)</p>
+            </div>
+            <div class="sign">
+                <p class="label">ĐẠI DIỆN BÊN B
+                </p>
+                <p>(Ký, ghi rõ họ tên)</p>
+            </div>
+        </div>
+    </section>
+</main>
+</body>
+</html>

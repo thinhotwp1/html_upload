@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Document</title>
+    <style>
+        * {
+            font-family: "SVN-Times New Roman", serif;
+        }
+
+        html,
+        body,
+        div,
+        span,
+        applet,
+        object,
+        iframe,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
+        p,
+        blockquote,
+        pre,
+        a,
+        abbr,
+        acronym,
+        address,
+        big,
+        cite,
+        code,
+        del,
+        dfn,
+        em,
+        img,
+        ins,
+        kbd,
+        q,
+        s,
+        samp,
+        small,
+        strike,
+        strong,
+        sub,
+        sup,
+        tt,
+        var,
+        b,
+        u,
+        i,
+        center,
+        dl,
+        dt,
+        dd,
+        ol,
+        ul,
+        li,
+        fieldset,
+        form,
+        label,
+        legend,
+        table,
+        caption,
+        tbody,
+        tfoot,
+        thead,
+        tr,
+        th,
+        td,
+        article,
+        aside,
+        canvas,
+        details,
+        embed,
+        figure,
+        figcaption,
+        footer,
+        header,
+        hgroup,
+        menu,
+        nav,
+        output,
+        ruby,
+        section,
+        summary,
+        time,
+        mark,
+        audio,
+        video {
+            margin: 0;
+            padding: 0;
+            border: 0;
+            font: inherit;
+            vertical-align: baseline;
+        }
+
+        /* HTML5 display-role reset for older browsers */
+        article,
+        aside,
+        details,
+        figcaption,
+        figure,
+        footer,
+        header,
+        hgroup,
+        menu,
+        nav,
+        section {
+            display: block;
+        }
+
+        ol,
+        ul {
+            list-style: none;
+        }
+
+        blockquote,
+        q {
+            quotes: none;
+        }
+
+        blockquote:before,
+        blockquote:after,
+        q:before,
+        q:after {
+            content: none;
+        }
+
+        table {
+            border-collapse: collapse;
+            border-spacing: 0;
+        }
+
+        .logo img {
+            height: 120px;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .header h1 {
+            font-weight: bold;
+            /* max-width: 340px; */
+            line-height: 28px;
+            margin: 0 auto 8px;
+        }
+
+        .header p span {
+            font-weight: bold;
+        }
+
+        .title {
+            font-weight: bold;
+            margin-bottom: 6px;
+        }
+
+        .information p {
+            /*margin-bottom: 2px;*/
+        }
+
+        .card-name span {
+            /*line-height: 1;*/
+            font-size: 10px;
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            text-align: center;
+            border: 1px solid black;
+        }
+
+        .table {
+            display: table;
+            width: 100%;
+            /*margin-bottom: 2px;*/
+        }
+
+        .table .cell {
+            display: table-cell;
+        }
+
+        .gender span {
+            margin-right: 12px;
+        }
+
+        .card .cell {
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .commit h3 {
+            font-weight: bold;
+            text-indent: 20px;
+            /*margin-bottom: 2px;*/
+        }
+
+        .commit ul li {
+            /*margin-bottom: 2px;*/
+        }
+
+        .commit li .dash {
+            margin-right: 28px;
+        }
+
+        .sign {
+            margin-top: 12px;
+            min-width: 200px;
+            float: right;
+            text-align: center;
+        }
+
+        .sign p {
+            /*margin-bottom: 2px;*/
+        }
+
+        .sign .label {
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        .logo img {
+            height: 40px;
+        }
+
+        .credit {
+            margin-top: 200px;
+        }
+
+        .bank {
+            margin-top: 120px;
+            margin-bottom: 120px;
+        }
+
+        .table .sign {
+            width: 33%;
+        }
+    </style>
+</head>
+<body>
+<div class="wrapper">
+    <div class="logo">
+        <img th:src="@{classpath:static/logo.png}" alt=""/>
+    </div>
+</div>
+<main>
+    <div class="header">
+        <h1>
+            GIẤY ĐỀ NGHỊ PHÁT HÀNH THẺ GHI NỢ VÀ CHO VAY THEO HẠN MỨC THẤU CHI
+        </h1>
+        <p><span>Kính gửi:</span> Ngân hàng Hợp tác</p>
+    </div>
+    <section class="customer">
+        <h2 class="title">I. PHẦN DÀNH CHO KHÁCH HÀNG</h2>
+        <div class="information">
+            <p>Họ và tên: <span th:text="${name}"></span></p>
+            <p class="card-name">
+                Tên trên thẻ (in hoa không dấu, tối đa 25 ký tự)
+                <span>D</span>
+                <span>O</span>
+                <span>T</span>
+                <span>I</span>
+                <span>E</span>
+                <span>N</span>
+                <span>D</span>
+                <span>U</span>
+                <span>N</span>
+                <span>G</span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </p>
+            <div class="table">
+                <div class="gender cell">
+                    <span>Giới tính:</span>
+                    <label for="male">Nam</label>
+                    <input type="checkbox" id="male"/>
+                    <label for="female">Nữ</label>
+                    <input type="checkbox" id="female"/>
+                </div>
+                <div class="cell">
+                    <p>Ngày sinh: <span th:text="${birth}"></span></p>
+                </div>
+                <div class="cell"><p>Quốc tịch: <span th:text="${nationality}"></span></p></div>
+            </div>
+            <div class="table">
+                <div class="cell">
+                    <p>Số CMND/Hộ chiếu/Căn cước: <span th:text="${idCard}"></span></p>
+                </div>
+                <div class="cell">
+                    <p>Ngày cấp: <span th:text="${date}"></span></p>
+                </div>
+                <div class="cell"><p>Nơi cấp: <span th:text="${provider}"></span></p></div>
+            </div>
+            <p>Địa chỉ thường trú: <span th:text="${origin}"></span></p>
+            <p>Điện thoại liên hệ: <span th:text="${phone}"></span></p>
+            <p>Nơi công tác:</p>
+            <p>Địa chỉ cơ quan:</p>
+            <div class="table">
+                <div class="cell">
+                    <p>Chức vụ:</p>
+                </div>
+                <div class="cell"><p>Thu nhập bình quân/tháng:</p></div>
+            </div>
+            <p>Thời hạn hợp đồng lao động:</p>
+            <div class="table">
+                <div class="cell" style="width: 40%">
+                    <label for="sms-banking">Đăng ký dịch vụ SMS Banking</label>
+                    <input type="checkbox" id="sms-banking"/>
+                </div>
+                <div class="cell"><span>Số ĐTDĐ:</span></div>
+            </div>
+            <p>Số tài khoản thanh toán:</p>
+            <p>Đề nghị Ngân hàng Hợp tác phát hành thẻ:</p>
+            <div class="table card">
+                <div class="cell">
+                    <input type="checkbox" id="card-option1"/>
+                    <label for="card-option1">Phát hành thường</label>
+                </div>
+                <div class="cell">
+                    <input type="checkbox" id="card-option2"/>
+                    <label for="card-option2">Phát hành nhanh</label>
+                </div>
+                <div class="cell">
+                    <input type="checkbox" id="card-option3"/>
+                    <label for="card-option3">Thấu chi</label>
+                </div>
+            </div>
+            <p>Hạn mức thấu chi đề nghị bằng số:</p>
+            <p>(Bằng chữ:)</p>
+            <p>Thời hạn hiệu lực:tháng</p>
+        </div>
+        <div class="commit">
+            <h3>Tôi cam kết:</h3>
+            <ul>
+                <li>
+                    <span class="dash">-</span>Những thông tin trên là đúng sự thật và
+                    hoàn toàn chịu trách nhiệm về các thông tin cung cấp, các dịch vụ
+                    đã đăng ký sử dụng.
+                </li>
+                <li>
+                    <span class="dash">-</span>Tôi xác nhận và đồng ý với các điều
+                    khoản đã được NHHT thông báo về Biểu phí phát hành và sử dụng thẻ
+                    ghi nợ.
+                </li>
+                <li>
+                    <span class="dash">-</span>Tôi đồng ý nhận thông tin quảng cáo về
+                    tất cả các sản phẩm, dịch vụ, chương trình hoạt động của NHHT bằng
+                    thư điện tử, tin nhắn hoặc qua các kênh khác.
+                </li>
+                <li>
+                    <span class="dash">-</span>Chấp hành đúng mọi quy định trong chế
+                    độ tín dụng và lãi suất cho vay hiện hành của Ngân hàng Hợp tác.
+                </li>
+                <li>
+                    <span class="dash">-</span>Cam kết dùng các nguồn thu nhập hợp
+                    pháp để trả nợ Ngân hàng Hợp tác.
+                </li>
+                <li>
+                    <span class="dash">-</span>Trường hợp không thực hiện đúng theo
+                    các điều khoản ký kết trong Hợp đồng sử dụng thẻ ghi nợ và cho vay
+                    theo HMTC tôi cam kết thực hiện biện pháp bảo đảm bằng tài sản
+                    theo yêu cầu của Ngân hàng Hợp tác.
+                </li>
+                <li>
+                    <span class="dash">-</span>Sử dụng thẻ ghi nợ theo các điều kiện,
+                    điều khoản quy định trong Hợp đồng sử dụng thẻ ghi nợ và cho vay
+                    theo HMTC của Ngân hàng Hợp tác.
+                </li>
+                <li>
+                    <span class="dash">-</span>Nếu không thực hiện đúng những lời cam
+                    kết trên, tôi xin chịu hoàn toàn trách nhiệm trước pháp luật.
+                </li>
+            </ul>
+        </div>
+        <div class="sign">
+            <p>,ngày tháng năm</p>
+            <p class="label">KHÁCH HÀNG</p>
+            <p>(Ký, ghi rõ họ tên)</p>
+        </div>
+    </section>
+    <section class="credit">
+        <div class="commit">
+            <h2 class="title">II.XÁC NHẬN CỦA CƠ QUAN</h2>
+            <h2 class="title">(Đối với Khách hàng không công tác tại Ngân hàng Hợp tác)</h2>
+            <h3>Phần dành cho khách hàng là cán bộ, nhân viên QTDND</h3>
+            <p>Ông(bà) <span th:text="${name}"></span>hiện đang công tác tại cơ quan chúng tôi.</p>
+            <p>1-Chức vụ công tác <span th:text="${job}"></span>Thời hạn hiệu lực còn lại của hợp đồng lao động (Người
+                vay vốn có hợp đồng lao động có xác định thời hạn):<span th:text="${date}"></span></p>
+            <p>2- Tổng thu nhập hàng tháng (bao gồm lương và các khoản thu nhập khác) là: <span
+                    th:text="${money}"></span></p>
+            <p>3- Trường hợp người vay vốn không trả được nợ theo đúng cam kết cơ quan chúng tôi có trách nhiệm giữ lại
+                lương và các khoản thu nhập nói trên để Ngân hàng Hợp tác Chi nhánh <span th:text="${branch}"></span>thu
+                nợ vay (gốc và lãi) trực tiếp tại cơ quan. Nếu người vay vốn nghỉ việc hoặc thuyên chuyển công tác cơ
+                quan sẽ thông báo cho Ngân hàng Hợp tác Chi nhánh<span th:text="${branch}"></span>và đôn đốc người vay
+                trả hết nợ trước khi làm các thủ tục theo chế độ.</p>
+            <h3>Phần dành cho khách hàng là thành viên QTDND</h3>
+            <p>Ông(bà) <span th:text="${name}"></span>hiện đang là thành viên và:</p>
+            <p>- Có dư nợ vay vốn tại QTDND <span th:text="${branch}"></span> Trong quá trình vay vốn, Ông (Bà)<span
+                    th:text="${name}"></span>luôn trả nợ gốc và lãi đầy đủ đúng hạn (Có lịch sử trả nợ đính kèm).</p>
+            <p>- Hoặc đang gửi vốn tại QTDND <span th:text="${branch}"></span></p>
+        </div>
+        <div class="table">
+            <div class="sign">
+                <p class="label">T/M BAN CHẤP HÀNH CÔNG ĐOÀN <span th:text="${branch}"></span></p>
+                <p>(Ký, ghi rõ họ tên)</p>
+            </div>
+            <div class="sign">
+                <p class="label">THỦ TRƯỞNG ĐƠN VỊ <span th:text="${branch}"></span></p>
+                <p>(Ký, ghi rõ họ tên)</p>
+            </div>
+        </div>
+    </section>
+    <section class="bank">
+        <div class="commit">
+            <h2 class="title">III.PHẦN DÀNH CHO NGÂN HÀNG</h2>
+        </div>
+        <p>
+            <input type="checkbox" id="yes"/>
+            <label for="yes">Chấp thuận đề nghị phát hành thẻ ghi nợ và cho vay theo HMTC của khách hàng</label>
+        </p>
+        <p>Hạn mức thấu chi theo xét duyệt của chi nhánh</p>
+        <p>
+            <input type="checkbox" id="no"/>
+            <label for="no">Không chấp thuận đề nghị phát hành thẻ ghi nợ và cho vay theo HMTC của khách hàng, lý
+                do</label>
+        </p>
+        <div class="table">
+            <div class="sign">
+                <p class="label">CÁN BỘ TÍN DỤNG</p>
+                <p>(Ký, ghi rõ họ tên)</p>
+            </div>
+            <div class="sign">
+                <p class="label">KIỂM SOÁT</p>
+                <p>(Ký, ghi rõ họ tên)</p>
+            </div>
+            <div class="sign">
+                <p class="label">THỦ TRƯỞNG ĐƠN VỊ</p>
+                <p>(Ký, ghi rõ họ tên)</p>
+            </div>
+        </div>
+    </section>
+</main>
+</body>
+</html>

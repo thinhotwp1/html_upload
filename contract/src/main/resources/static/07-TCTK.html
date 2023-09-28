@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Document</title>
+    <style>
+        * {
+            font-family: "SVN-Times New Roman", serif;
+        }
+
+        html,
+        body,
+        div,
+        span,
+        applet,
+        object,
+        iframe,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
+        p,
+        blockquote,
+        pre,
+        a,
+        abbr,
+        acronym,
+        address,
+        big,
+        cite,
+        code,
+        del,
+        dfn,
+        em,
+        img,
+        ins,
+        kbd,
+        q,
+        s,
+        samp,
+        small,
+        strike,
+        strong,
+        sub,
+        sup,
+        tt,
+        var,
+        b,
+        u,
+        i,
+        center,
+        dl,
+        dt,
+        dd,
+        ol,
+        ul,
+        li,
+        fieldset,
+        form,
+        label,
+        legend,
+        table,
+        caption,
+        tbody,
+        tfoot,
+        thead,
+        tr,
+        th,
+        td,
+        article,
+        aside,
+        canvas,
+        details,
+        embed,
+        figure,
+        figcaption,
+        footer,
+        header,
+        hgroup,
+        menu,
+        nav,
+        output,
+        ruby,
+        section,
+        summary,
+        time,
+        mark,
+        audio,
+        video {
+            margin: 0;
+            padding: 0;
+            border: 0;
+            font: inherit;
+            vertical-align: baseline;
+        }
+
+        /* HTML5 display-role reset for older browsers */
+        article,
+        aside,
+        details,
+        figcaption,
+        figure,
+        footer,
+        header,
+        hgroup,
+        menu,
+        nav,
+        section {
+            display: block;
+        }
+
+        ol,
+        ul {
+            list-style: none;
+        }
+
+        blockquote,
+        q {
+            quotes: none;
+        }
+
+        blockquote:before,
+        blockquote:after,
+        q:before,
+        q:after {
+            content: none;
+        }
+
+        table {
+            border-collapse: collapse;
+            border-spacing: 0;
+        }
+
+        .logo img {
+            height: 120px;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+            margin-top: 100px;
+        }
+
+        .header h1 {
+            font-weight: bold;
+            /* max-width: 340px; */
+            line-height: 28px;
+            margin: 0 auto 8px;
+        }
+
+        .header p span {
+            font-weight: bold;
+        }
+
+        .title {
+            font-weight: bold;
+            margin-bottom: 6px;
+        }
+
+        .information p {
+            /*margin-bottom: 2px;*/
+        }
+
+        .card-name span {
+            /*line-height: 1;*/
+            font-size: 10px;
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            text-align: center;
+            border: 1px solid black;
+        }
+
+        .table {
+            display: table;
+            width: 100%;
+            /*margin-bottom: 2px;*/
+        }
+
+        .table .cell {
+            display: table-cell;
+        }
+
+        .gender span {
+            margin-right: 12px;
+        }
+
+        .card .cell {
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .commit h3 {
+            font-weight: bold;
+            text-indent: 20px;
+            /*margin-bottom: 2px;*/
+        }
+
+        .commit ul li {
+            /*margin-bottom: 2px;*/
+        }
+
+        .commit li .dash {
+            margin-right: 28px;
+        }
+
+        .sign {
+            margin-top: 12px;
+            min-width: 200px;
+            float: right;
+            text-align: center;
+            padding-bottom: 30px;
+        }
+
+        .sign p {
+            /*margin-bottom: 2px;*/
+        }
+
+        .sign .label {
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        .logo img {
+            height: 40px;
+        }
+
+        .table .sign {
+            width: 33%;
+        }
+
+        .header .label {
+            font-weight: bold;
+            margin-right: 70px;
+        }
+
+        .label {
+            font-weight: bold;
+        }
+
+        .i-label {
+            font-weight: bold;
+            font-style: italic;
+        }
+        .table .sign1{
+            width: 50%;
+        }
+        .cell{
+            text-align: center;
+        }
+
+    </style>
+</head>
+<body>
+<div class="wrapper">
+    <div class="logo">
+        <img th:src="@{classpath:static/logo.png}" alt=""/>
+    </div>
+</div>
+<div class="table">
+    <div class="cell sign1">
+        <p class="label">CỘNG HÒA XÃ HỘI CHỦ NGHĨA VIỆT NAM</p>
+        <p class="label">Độc lập - Tự do - Hạnh phúc</p>
+    </div>
+    <div class="cell sign1">
+        <p class="label">NGÂN HÀNG HỢP TÁC XÃ</p>
+        <p class="label">VIỆT NAM</p>
+    </div>
+</div>
+<main>
+    <div class="header">
+        <h1>
+            GIẤY ĐỀ NGHỊ ĐIỀU CHỈNH HẠN MỨC THẤU CHI
+        </h1>
+        <p><span class="label">Kính gửi:</span>Ngân hàng Hợp tác – <span th:text="${branch}"></span></p>
+    </div>
+    <section class="customer">
+        <div class="information">
+            <p class="label">I.PHẦN DÀNH CHO KHÁCH HÀNG</p>
+            <p>Tên tôi là : <span th:text="${name}"></span></p>
+            <div class="table">
+                <div class="cell">
+                    <p>Số CMND/Hộ chiếu/Căn cước:<span th:text="${customerId}"></span></p>
+                </div>
+                <div class="cell">
+                    <p>Ngày cấp: <span th:text="${date}"></span></p>
+                </div>
+                <div class="cell">
+                    <p>Nơi cấp:<span th:text="${provider}"></span></p>
+                </div>
+            </div>
+            <p>Địa chỉ: <span th:text="${address}"></span></p>
+            <div class="table">
+                <div class="cell">
+                    <p>Cơ quan công tác: <span th:text="${company}"></span></p>
+                </div>
+                <div class="cell">
+                    <p>Chức vụ:  <span th:text="${job}"></span></p>
+                </div>
+            </div>
+            <p>Địa chỉ cơ quan: <span th:text="${workAddress}"></span></p>
+            <div class="table">
+                <div class="cell">
+                    <p>Điện thoại liên hệ: <span th:text="${phone}"></span></p>
+                </div>
+                <div class="cell">
+                    <p>Email: <span th:text="${email}"></span></p>
+                </div>
+            </div>
+            <p>Số tài khoản tại NHHT:  <span th:text="${cif}"></span>
+            <p>Hợp đồng sử dụng thẻ ghi nợ và cho vay theo hạn mức thấu chi ký ngày: <span th:text="${date}"></span></p>
+            <p>Đề nghị NH điều chỉnh hạn mức thấu chi cho tôi theo nội dung sau:<span th:text="${request}"></span>
+            <div class="table">
+                <div class="cell">
+                    <p>Hạn mức cũ: <span th:text="${oldLimit}"></span></p>
+                </div>
+                <div class="cell">
+                    <p>Hạn mức đề nghị: <span th:text="${newLimit}"></span></p>
+                </div>
+            </div>
+            <p>Lý do: <span th:text="${reason}"></span>
+
+        </div>
+
+        <div class="table">
+            <div class="sign">
+                <p class="date"><span th:text="${place}"></span>,ngày<span th:text="${date}"></span> tháng<span
+                        th:text="${date}"></span> năm<span th:text="${date}"></span></p>
+                <p class="label">KHÁCH HÀNG</p>
+                <p>  (Ký, ghi rõ họ tên)</p>
+            </div>
+        </div>
+        <section class="credit">
+            <div class="commit">
+                <h2 class="title">II.XÁC NHẬN CỦA CƠ QUAN</h2>
+                <h2 class="title">(Đối với Khách hàng không công tác tại Ngân hàng Hợp tác)</h2>
+                <h3>Phần dành cho khách hàng là cán bộ, nhân viên QTDND</h3>
+                <p>Ông(bà) <span th:text="${name}"></span>hiện đang công tác tại cơ quan chúng tôi.</p>
+                <p>1-Chức vụ công tác <span th:text="${job}"></span>Thời hạn hiệu lực còn lại của hợp đồng lao động (Người
+                    vay vốn có hợp đồng lao động có xác định thời hạn):<span th:text="${date}"></span></p>
+                <p>2- Tổng thu nhập hàng tháng (bao gồm lương và các khoản thu nhập khác) là: <span
+                        th:text="${money}"></span></p>
+                <p>3- Trường hợp người vay vốn không trả được nợ theo đúng cam kết cơ quan chúng tôi có trách nhiệm giữ lại
+                    lương và các khoản thu nhập nói trên để Ngân hàng Hợp tác Chi nhánh <span th:text="${branch}"></span>thu
+                    nợ vay (gốc và lãi) trực tiếp tại cơ quan. Nếu người vay vốn nghỉ việc hoặc thuyên chuyển công tác cơ
+                    quan sẽ thông báo cho Ngân hàng Hợp tác Chi nhánh<span th:text="${branch}"></span>và đôn đốc người vay
+                    trả hết nợ trước khi làm các thủ tục theo chế độ.</p>
+                <h3>Phần dành cho khách hàng là thành viên QTDND</h3>
+                <p>Ông(bà) <span th:text="${name}"></span>hiện đang là thành viên và:</p>
+                <p>- Có dư nợ vay vốn tại QTDND <span th:text="${branch}"></span> Trong quá trình vay vốn, Ông (Bà)<span
+                        th:text="${name}"></span>luôn trả nợ gốc và lãi đầy đủ đúng hạn (Có lịch sử trả nợ đính kèm).</p>
+                <p>- Hoặc đang gửi vốn tại QTDND <span th:text="${branch}"></span></p>
+            </div>
+            <div class="table">
+                <div class="sign">
+                    <p class="label">T/M BAN CHẤP HÀNH CÔNG ĐOÀN <span th:text="${branch}"></span></p>
+                    <p>(Ký, ghi rõ họ tên)</p>
+                </div>
+                <div class="sign">
+                    <p class="label">THỦ TRƯỞNG ĐƠN VỊ <span th:text="${branch}"></span></p>
+                    <p>(Ký, ghi rõ họ tên)</p>
+                </div>
+            </div>
+        </section>
+        <section class="bank">
+            <div class="commit">
+                <h2 class="title">III.PHẦN DÀNH CHO NGÂN HÀNG</h2>
+            </div>
+            <p>
+                <input type="checkbox" id="yes"/>
+                <label for="yes">Chấp thuận đề nghị phát hành thẻ ghi nợ và cho vay theo HMTC của khách hàng</label>
+            </p>
+            <p>Hạn mức thấu chi theo xét duyệt của chi nhánh</p>
+            <p>
+                <input type="checkbox" id="no"/>
+                <label for="no">Không chấp thuận đề nghị phát hành thẻ ghi nợ và cho vay theo HMTC của khách hàng, lý
+                    do</label>
+            </p>
+            <div class="table">
+                <div class="sign">
+                    <p class="label">CÁN BỘ TÍN DỤNG</p>
+                    <p>(Ký, ghi rõ họ tên)</p>
+                </div>
+                <div class="sign">
+                    <p class="label">KIỂM SOÁT</p>
+                    <p>(Ký, ghi rõ họ tên)</p>
+                </div>
+                <div class="sign">
+                    <p class="label">THỦ TRƯỞNG ĐƠN VỊ</p>
+                    <p>(Ký, ghi rõ họ tên)</p>
+                </div>
+            </div>
+        </section>
+    </section>
+</main>
+</body>
+</html>

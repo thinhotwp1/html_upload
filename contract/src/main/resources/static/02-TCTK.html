@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Document</title>
+    <style>
+        * {
+            font-family: "SVN-Times New Roman", serif;
+        }
+
+        html,
+        body,
+        div,
+        span,
+        applet,
+        object,
+        iframe,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
+        p,
+        blockquote,
+        pre,
+        a,
+        abbr,
+        acronym,
+        address,
+        big,
+        cite,
+        code,
+        del,
+        dfn,
+        em,
+        img,
+        ins,
+        kbd,
+        q,
+        s,
+        samp,
+        small,
+        strike,
+        strong,
+        sub,
+        sup,
+        tt,
+        var,
+        b,
+        u,
+        i,
+        center,
+        dl,
+        dt,
+        dd,
+        ol,
+        ul,
+        li,
+        fieldset,
+        form,
+        label,
+        legend,
+        table,
+        caption,
+        tbody,
+        tfoot,
+        thead,
+        tr,
+        th,
+        td,
+        article,
+        aside,
+        canvas,
+        details,
+        embed,
+        figure,
+        figcaption,
+        footer,
+        header,
+        hgroup,
+        menu,
+        nav,
+        output,
+        ruby,
+        section,
+        summary,
+        time,
+        mark,
+        audio,
+        video {
+            margin: 0;
+            padding: 0;
+            border: 0;
+            font: inherit;
+            vertical-align: baseline;
+        }
+
+        /* HTML5 display-role reset for older browsers */
+        article,
+        aside,
+        details,
+        figcaption,
+        figure,
+        footer,
+        header,
+        hgroup,
+        menu,
+        nav,
+        section {
+            display: block;
+        }
+
+        ol,
+        ul {
+            list-style: none;
+        }
+
+        blockquote,
+        q {
+            quotes: none;
+        }
+
+        blockquote:before,
+        blockquote:after,
+        q:before,
+        q:after {
+            content: none;
+        }
+
+        table {
+            border-collapse: collapse;
+            border-spacing: 0;
+        }
+
+        .logo img {
+            height: 120px;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+            margin-top: 50px;
+        }
+
+        .header h1 {
+            font-weight: bold;
+            /* max-width: 340px; */
+            line-height: 28px;
+            margin: 0 auto 8px;
+        }
+
+        .header p span {
+            font-weight: bold;
+        }
+
+        .title {
+            font-weight: bold;
+            margin-bottom: 6px;
+        }
+
+        .information p {
+            /*margin-bottom: 2px;*/
+        }
+
+        .card-name span {
+            /*line-height: 1;*/
+            font-size: 10px;
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            text-align: center;
+            border: 1px solid black;
+        }
+
+        .table {
+            display: table;
+            width: 100%;
+            /*margin-bottom: 2px;*/
+        }
+
+        .table .cell {
+            display: table-cell;
+        }
+
+        .gender span {
+            margin-right: 12px;
+        }
+
+        .card .cell {
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .commit h3 {
+            font-weight: bold;
+            text-indent: 20px;
+            /*margin-bottom: 2px;*/
+        }
+
+        .commit ul li {
+            /*margin-bottom: 2px;*/
+        }
+
+        .commit li .dash {
+            margin-right: 28px;
+        }
+
+        .sign {
+            margin-top: 12px;
+            min-width: 200px;
+            float: right;
+            text-align: center;
+        }
+
+        .sign p {
+            /*margin-bottom: 2px;*/
+        }
+
+        .sign .label {
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        .logo img {
+            height: 40px;
+        }
+
+        .credit {
+            margin-top: 200px;
+        }
+
+        .bank {
+            margin-top: 120px;
+            margin-bottom: 120px;
+        }
+
+        .table .sign {
+            width: 50%;
+        }
+        .date{
+            float: right;
+        }
+        .request-table th, td{
+            border: 1px solid black;
+        }
+        th{
+            width: 18%;
+            font-weight: bold;
+            padding-top: 15px;
+        }
+        .sign1 {
+            margin-top: 12px;
+            min-width: 200px;
+            float: right;
+            text-align: center;
+        }
+        .table .sign1{
+            width: 33%;
+        }
+        .table .sign1 .label{
+            font-weight: bold;
+        }
+        td{
+            text-align: center;
+            height: 30px;
+            padding: 10px 10px;
+        }
+
+    </style>
+</head>
+<body>
+<div class="wrapper">
+    <div class="logo">
+        <img th:src="@{classpath:static/logo.png}" alt=""/>
+    </div>
+</div>
+<main>
+    <section>
+        <div class="table">
+            <div class="sign">
+                <p class="label">NGÂN HÀNG HỢP TÁC</p>
+                <p>Chi nhánh:<span th:text="${branch}"></span></p>
+                <p>------------------------</p>
+
+            </div>
+            <div class="sign">
+                <p class="label">CỘNG HÒA XÃ HỘI CHỦ NGHĨA VIỆT NAM</p>
+                <p class="label">Độc lập - Tự do - Hạnh phúc</p>
+                <p>------------------------</p>
+            </div>
+        </div>
+        <p class="date"><span th:text="${place}"></span>,ngày<span th:text="${day}"></span> tháng<span th:text="${month}"></span> năm<span th:text="${year}"></span></p>
+        <div class="header">
+            <h1>
+                ĐỀ NGHỊ PHÊ DUYỆT CHO VAY THEO HẠN MỨC THẤU CHI
+            </h1>
+            <p>(……………….)
+            </p>
+        </div>
+        <table class="request-table">
+            <tr>
+                <th>STT</th>
+                <th>Tên khách hàng</th>
+                <th>Mã khách hàng</th>
+                <th>Số CMND/HC/Căn cước</th>
+                <th>Số tài khoản</th>
+                <th>Đề xuất hạn mức cho vay thấu chi</th>
+            </tr>
+            <tr>
+                <td><span th:text="${order}"></span></td>
+                <td><span th:text="${name}"></span></td>
+                <td><span th:text="${customerId}"></span></td>
+                <td><span th:text="${idCard}"></span></td>
+                <td><span th:text="${cif}"></span></td>
+                <td><span th:text="${loan}"></span></td>
+            </tr>
+            <tr>
+                <td colspan="5">Tổng cộng</td>
+                <td></td>
+            </tr>
+        </table>
+        <div class="table">
+            <div class="sign1">
+                <p class="label">CÁN BỘ TÍN DỤNG</p>
+                <p>(Ký, ghi rõ họ tên)</p>
+            </div>
+            <div class="sign1">
+                <p class="label">KIỂM SOÁT</p>
+                <p>(Ký, ghi rõ họ tên)</p>
+            </div>
+            <div class="sign1">
+                <p class="label">THỦ TRƯỞNG ĐƠN VỊ</p>
+                <p>(Ký, ghi rõ họ tên)</p>
+            </div>
+        </div>
+    </section>
+</main>
+</body>
+</html>

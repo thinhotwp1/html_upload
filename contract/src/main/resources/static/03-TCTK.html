@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Document</title>
+    <style>
+        * {
+            font-family: "SVN-Times New Roman", serif;
+        }
+
+        html,
+        body,
+        div,
+        span,
+        applet,
+        object,
+        iframe,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
+        p,
+        blockquote,
+        pre,
+        a,
+        abbr,
+        acronym,
+        address,
+        big,
+        cite,
+        code,
+        del,
+        dfn,
+        em,
+        img,
+        ins,
+        kbd,
+        q,
+        s,
+        samp,
+        small,
+        strike,
+        strong,
+        sub,
+        sup,
+        tt,
+        var,
+        b,
+        u,
+        i,
+        center,
+        dl,
+        dt,
+        dd,
+        ol,
+        ul,
+        li,
+        fieldset,
+        form,
+        label,
+        legend,
+        table,
+        caption,
+        tbody,
+        tfoot,
+        thead,
+        tr,
+        th,
+        td,
+        article,
+        aside,
+        canvas,
+        details,
+        embed,
+        figure,
+        figcaption,
+        footer,
+        header,
+        hgroup,
+        menu,
+        nav,
+        output,
+        ruby,
+        section,
+        summary,
+        time,
+        mark,
+        audio,
+        video {
+            margin: 0;
+            padding: 0;
+            /*border: 0;*/
+            font: inherit;
+            vertical-align: baseline;
+        }
+
+        /* HTML5 display-role reset for older browsers */
+        article,
+        aside,
+        details,
+        figcaption,
+        figure,
+        footer,
+        header,
+        hgroup,
+        menu,
+        nav,
+        section {
+            display: block;
+        }
+
+        ol,
+        ul {
+            list-style: none;
+        }
+
+        blockquote,
+        q {
+            quotes: none;
+        }
+
+        blockquote:before,
+        blockquote:after,
+        q:before,
+        q:after {
+            content: none;
+        }
+
+        table {
+            border-spacing: 0;
+            border-collapse: collapse;
+        }
+
+        .logo img {
+            height: 120px;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+            margin-top: 50px;
+        }
+
+        .header h1 {
+            font-weight: bold;
+            /* max-width: 340px; */
+            line-height: 28px;
+            margin: 0 auto 8px;
+        }
+
+        .header p span {
+            font-weight: bold;
+        }
+
+        .title {
+            font-weight: bold;
+            margin-bottom: 6px;
+        }
+
+        .information p {
+            /*margin-bottom: 2px;*/
+        }
+
+        .card-name span {
+            /*line-height: 1;*/
+            font-size: 10px;
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            text-align: center;
+            border: 1px solid black;
+        }
+
+        .table {
+            display: table;
+            width: 100%;
+            /*margin-bottom: 2px;*/
+        }
+
+        .table .cell {
+            display: table-cell;
+        }
+
+        .gender span {
+            margin-right: 12px;
+        }
+
+        .card .cell {
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .commit h3 {
+            font-weight: bold;
+            text-indent: 20px;
+            /*margin-bottom: 2px;*/
+        }
+
+        .commit ul li {
+            /*margin-bottom: 2px;*/
+        }
+
+        .commit li .dash {
+            margin-right: 28px;
+        }
+
+        .sign {
+            margin-top: 12px;
+            min-width: 200px;
+            float: right;
+            text-align: center;
+        }
+
+        .sign p {
+            /*margin-bottom: 2px;*/
+        }
+
+        .sign .label {
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        .logo img {
+            height: 40px;
+        }
+
+        .credit {
+            margin-top: 200px;
+        }
+
+        .bank {
+            margin-top: 120px;
+            margin-bottom: 120px;
+        }
+
+        .table .sign {
+            width: 50%;
+        }
+
+        .date {
+            float: right;
+        }
+
+        .request-table th, td {
+            border: 1px solid black;
+        }
+
+        .sign1 {
+            margin-top: 12px;
+            min-width: 200px;
+            float: right;
+            text-align: center;
+        }
+
+        .table .sign1 {
+            width: 33%;
+        }
+
+        .table .sign1 .label {
+            font-weight: bold;
+        }
+
+        .header .label {
+            font-weight: bold;
+            font-style: italic;
+        }
+
+        p {
+            padding: 5px 5px;
+        }
+
+        th {
+            font-weight: bold;
+            width: 18%;
+            padding: 20px 10px;
+            height: 40px;
+            font-size: 20px;
+        }
+
+        td {
+            border-top: 0;
+            padding: 10px 10px;
+            text-align: center;
+            height: 25px;
+        }
+
+        .bold-i-label {
+            font-weight: bold;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+<div class="wrapper">
+    <div class="logo">
+        <img th:src="@{classpath:static/logo.png}" alt=""/>
+    </div>
+</div>
+<main>
+    <section>
+        <div class="table">
+            <div class="sign">
+                <p class="label">CỘNG HÒA XÃ HỘI CHỦ NGHĨA VIỆT NAM</p>
+                <p class="label">Độc lập - Tự do - Hạnh phúc</p>
+                <p>------------------------</p>
+            </div>
+            <div class="sign">
+                <p class="label">NGÂN HÀNG HỢP TÁC</p>
+                <p>------------------------</p>
+                <p class="label">TRUNG TÂM THẺ </p>
+                <p class="label">VÀ DỊCH VỤ NGÂN HÀNG SỐ</p>
+            </div>
+        </div>
+        <p class="date"><span th:text="${place}"></span>,ngày<span th:text="${date}"></span> tháng<span
+                th:text="${date}"></span> năm<span th:text="${date}"></span></p>
+        <div class="header">
+            <h1>
+                TỜ TRÌNH
+            </h1>
+            <p class="label">
+                V/v:"Phê duyệt hạn mức thấu chi
+            </p>
+            <h1>Kính trình: Giám đốc Trung tâm Thẻ và dịch vụ Ngân hàng số</h1>
+        </div>
+        <p>Căn cứ Quy định số 24A/2021/QĐ-NHHT ngày 22/02/2021 về cho vay theo hạn mức thấu chi trên thẻ ghi nợ đối với
+            cán bộ, công chức, viên chức, người lao động tại các cơ quan, doanh nghiệp;</p>
+        <p>Căn cứ danh sách khách hàng Chi nhánh<span th:text="${branch}"></span>.đề xuất ngày<span
+                th:text="${date}"></span>(đính kèm).</p>
+        <p>Sau khi tiến hành rà soát, đối chiếu thông tin khách hàng trên hệ thống xếp hạng tín dụng nội bộ, kính trình
+            Giám đốc phê duyệt hạn mức thấu chi (HMTC) đối với các khách hàng, cụ thể: </p>
+        <table class="request-table">
+            <tr>
+                <th>STT</th>
+                <th>Họ tên khách hàng</th>
+                <th>Số CMT</th>
+                <th>Số tài khoản</th>
+                <th>Kết quả XHTD</th>
+                <th>HMTC Phê duyệt (đồng)</th>
+            </tr>
+            <tr>
+                <td><span th:text="${order}"></span></td>
+                <td><span th:text="${name}"></span></td>
+                <td><span th:text="${id}"></span></td>
+                <td><span th:text="${cif}"></span></td>
+                <td><span th:text="${result}"></span></td>
+                <td><span th:text="${verify}"></span></td>
+            </tr>
+            <tr>
+                <td colspan="5">Tổng cộng</td>
+                <td></td>
+            </tr>
+        </table>
+        <p class="bold-i-label">
+            Kính trình Giám đốc phê duyệt.
+        </p>
+        <div class="table">
+            <div class="sign1">
+                <p class="label">TRUNG TÂM THẺ</p>
+                <p class="label">VÀ DỊCH VỤ NGÂN HÀNG SỐ</p>
+            </div>
+        </div>
+    </section>
+</main>
+</body>
+</html>

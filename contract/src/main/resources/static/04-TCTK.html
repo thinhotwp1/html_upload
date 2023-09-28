@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Document</title>
+    <style>
+        * {
+            font-family: "SVN-Times New Roman", serif;
+        }
+
+        html,
+        body,
+        div,
+        span,
+        applet,
+        object,
+        iframe,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
+        p,
+        blockquote,
+        pre,
+        a,
+        abbr,
+        acronym,
+        address,
+        big,
+        cite,
+        code,
+        del,
+        dfn,
+        em,
+        img,
+        ins,
+        kbd,
+        q,
+        s,
+        samp,
+        small,
+        strike,
+        strong,
+        sub,
+        sup,
+        tt,
+        var,
+        b,
+        u,
+        i,
+        center,
+        dl,
+        dt,
+        dd,
+        ol,
+        ul,
+        li,
+        fieldset,
+        form,
+        label,
+        legend,
+        table,
+        caption,
+        tbody,
+        tfoot,
+        thead,
+        tr,
+        th,
+        td,
+        article,
+        aside,
+        canvas,
+        details,
+        embed,
+        figure,
+        figcaption,
+        footer,
+        header,
+        hgroup,
+        menu,
+        nav,
+        output,
+        ruby,
+        section,
+        summary,
+        time,
+        mark,
+        audio,
+        video {
+            margin: 0;
+            padding: 0;
+            border: 0;
+            font: inherit;
+            vertical-align: baseline;
+        }
+
+        /* HTML5 display-role reset for older browsers */
+        article,
+        aside,
+        details,
+        figcaption,
+        figure,
+        footer,
+        header,
+        hgroup,
+        menu,
+        nav,
+        section {
+            display: block;
+        }
+
+        ol,
+        ul {
+            list-style: none;
+        }
+
+        blockquote,
+        q {
+            quotes: none;
+        }
+
+        blockquote:before,
+        blockquote:after,
+        q:before,
+        q:after {
+            content: none;
+        }
+
+        table {
+            border-collapse: collapse;
+            border-spacing: 0;
+        }
+
+        .logo img {
+            height: 120px;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+            margin-top: 100px;
+        }
+
+        .header h1 {
+            font-weight: bold;
+            /* max-width: 340px; */
+            line-height: 28px;
+            margin: 0 auto 8px;
+        }
+
+        .header p span {
+            font-weight: bold;
+        }
+
+        .title {
+            font-weight: bold;
+            margin-bottom: 6px;
+        }
+
+        .information p {
+            /*margin-bottom: 2px;*/
+        }
+
+        .card-name span {
+            /*line-height: 1;*/
+            font-size: 10px;
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            text-align: center;
+            border: 1px solid black;
+        }
+
+        .table {
+            display: table;
+            width: 100%;
+            /*margin-bottom: 2px;*/
+        }
+
+        .table .cell {
+            display: table-cell;
+        }
+
+        .gender span {
+            margin-right: 12px;
+        }
+
+        .card .cell {
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .commit h3 {
+            font-weight: bold;
+            text-indent: 20px;
+            /*margin-bottom: 2px;*/
+        }
+
+        .commit ul li {
+            /*margin-bottom: 2px;*/
+        }
+
+        .commit li .dash {
+            margin-right: 28px;
+        }
+
+        .sign {
+            margin-top: 12px;
+            min-width: 200px;
+            float: right;
+            text-align: center;
+        }
+
+        .sign p {
+            /*margin-bottom: 2px;*/
+        }
+
+        .sign .label {
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        .logo img {
+            height: 40px;
+        }
+
+        .credit {
+            margin-top: 200px;
+        }
+
+        .bank {
+            margin-top: 120px;
+            margin-bottom: 120px;
+        }
+
+        .table .sign {
+            width: 33%;
+        }
+        .header .label{
+            font-weight: bold;
+            margin-right:70px;
+        }
+        .label{
+            font-weight: bold;
+        }
+        .i-label{
+            font-weight: bold;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+<div class="wrapper">
+    <div class="logo">
+        <img th:src="@{classpath:static/logo.png}" alt=""/>
+    </div>
+</div>
+<div class="sign">
+    <p class="label">CỘNG HÒA XÃ HỘI CHỦ NGHĨA VIỆT NAM</p>
+    <p class="label">Độc lập - Tự do - Hạnh Phúc</p>
+</div>
+<main>
+    <div class="header">
+        <h1>
+            ĐỀ NGHỊ TẠM DỪNG/ MỞ LẠI/ CHẤM DỨT
+        </h1>
+        <h1>
+            HẠN MỨC CHO VAY THẤU CHI
+        </h1>
+        <p class="label">Kính gửi:Ngân hàng Hợp tác</p>
+    </div>
+    <section class="customer">
+        <div class="information">
+            <p>Tên tôi là : <span th:text="${name}"></span></p>
+            <div class="table">
+                <p class="cell">Sinh ngày: <span th:text="${date}"></span> /<span th:text="${date}"></span> / <span
+                        th:text="${date}"></span></p>
+                <p class="cell">Nơi sinh <span th:text="${origin}"></span></p>
+            </div>
+            <p>Địa chỉ: <span th:text="${address}"></span></p>
+            <div class="cell">
+                <p>Số CMND/Hộ chiếu/Căn cước: <span th:text="${idCard}"></span></p>
+            </div>
+            <div class="table">
+                <div class="cell">
+                    <p>Ngày cấp: <span th:text="${date}"></span></p>
+                </div>
+                <div class="cell"><p>Nơi cấp: <span th:text="${provider}"></span></p></div>
+            </div>
+            <div class="table">
+                <div class="cell">
+                    <p>Số tài khoản: <span th:text="${cif}"></span></p>
+                </div>
+                <div class="cell"><p>tại NHHT Chi nhánh <span th:text="${branch}"></span></p></div>
+            </div>
+            <p>
+                <input type="checkbox" id="card-option1"/>
+                <label for="card-option1"><span class="label">chấm dứt </span> (trước hạn) hạn mức cho vay thấu chi trên tài khoản thanh toán </label>
+            </p>
+            <p>
+                <input type="checkbox" id="card-option2"/>
+                <label for="card-option2"><span class="label">tạm dừng</span> hạn mức cho vay thấu chi trên tài khoản thanh toán </label>
+            </p>
+            <p>
+                <input type="checkbox" id="card-option3"/>
+                <label for="card-option3"><span class="label">mở lại</span> hạn mức cho vay thấu chi trên tài khoản thanh toán </label>
+            </p>
+            <p class="label"> với nội dung sau:</p>
+            <p>Hợp đồng sử dụng thẻ ghi nợ và cho vay theo hạn mức thấu chi ký ngày:<span th:text="${date}"></span></p>
+            <p>Hạn mức cho vay thấu chi:<span th:text="${money}"></span>đồng.</p>
+            <p>Bằng chữ:<span th:text="${money}"></span></p>
+            <p>Thời hạn hiệu lực của cho vay theo hạn mức thấu chi: <span th:text="${date}"></span></p>
+            <p>Lý do tạm dừng/chấm dứt (trước hạn) hạn mức thấu chi:<span th:text="${reason}"></span></p>
+            <p>Tôi cam kết: Thanh toán đầy đủ mọi khoản nợ gốc, phí, lãi vay thấu chi cho đến thời điểm tạm dừng/chấm dứt hạn mức theo hợp đồng cho vay đã ký.</p>
+        </div>
+        <div class="table">
+            <div class="sign">
+                <p class="label">NGƯỜI ĐỀ NGHỊ</p>
+                <p>(Ký, ghi rõ họ tên)</p>
+            </div>
+        </div>
+        <p class="i-label">Nơi nhận:</p>
+        <p>- Như trên</p>
+        <p>- Lưu:CN, TTT DVNHS</p>
+    </section>
+</main>
+</body>
+</html>
