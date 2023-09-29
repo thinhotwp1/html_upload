@@ -14,7 +14,6 @@ import java.nio.file.Files;
 @Service
 public class ContractService {
     /**
-     * Thêm <span id="var" ></span> vào file html
      * Lấy thông tin khách hàng từ request gán vào file html
      * Return biểu mẫu chứa thông tin khách hàng
      */
@@ -29,8 +28,7 @@ public class ContractService {
         // Chuyển dữ liệu HTML thành chuỗi
         String htmlContent = new String(fileData, StandardCharsets.UTF_8);
 
-        // Thay thế vị trí nameCustomer bằng giá trị của nameCustomer từ request
-        htmlContent = htmlContent.replace("<span id=\"nameCustomer\"></span>", "<span id=\"nameCustomer\">" + request.getNameCustomer() + "</span>");
+        htmlContent = htmlContent.replace("<p>Họ và tên: ....................................................................................................................................................................", "<p>Họ và tên: " + request.getNameCustomer() + "<p>");
         // ... Tương tự với các dòng dưới
         // ... Tương tự với các dòng dưới
         // ... Tương tự với các dòng dưới
